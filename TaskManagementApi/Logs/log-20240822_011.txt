@@ -1,0 +1,16 @@
+2024-08-22 21:31:57.328 +01:00 [INF] Creating a new group with name: Study group
+2024-08-22 21:31:57.703 +01:00 [INF] group created successfully with ID: 66c7a03d003697fd81221970
+2024-08-22 21:32:33.515 +01:00 [INF] Fetching all groups.
+2024-08-22 21:32:55.268 +01:00 [INF] Fetching group with ID: 66c7a03d003697fd81221970
+2024-08-22 21:58:49.359 +01:00 [INF] Fetching all groups.
+2024-08-22 21:59:15.631 +01:00 [INF] Retrieved groups from database and cached.
+2024-08-22 22:00:14.923 +01:00 [INF] Fetching all groups.
+2024-08-22 22:01:00.916 +01:00 [INF] Retrieved groups from cache.
+2024-08-22 22:01:50.230 +01:00 [INF] Fetching all lists.
+2024-08-22 22:02:06.149 +01:00 [INF] Retrieved lists from database and cached.
+2024-08-22 22:02:17.172 +01:00 [INF] Fetching all lists.
+2024-08-22 22:02:24.216 +01:00 [INF] Retrieved lists from cache.
+2024-08-22 22:03:03.252 +01:00 [INF] Fetching all tasks.
+2024-08-22 22:03:09.157 +01:00 [INF] Retrieved tasks from database and cached.
+2024-08-22 22:03:19.534 +01:00 [INF] Fetching all tasks.
+2024-08-22 22:03:23.275 +01:00 [INF] Retrieved tasks from cache.

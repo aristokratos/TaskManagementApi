@@ -1,0 +1,5 @@
+2024-08-24 11:22:20.612 +01:00 [WRN] The WebRootPath was not found: C:\Users\oluwatobilobao\source\repos\TaskManagementApi\TaskManagementApi\wwwroot. Static files may be unavailable.
+2024-08-24 11:25:35.155 +01:00 [INF] Fetching all groups.
+2024-08-24 11:25:35.932 +01:00 [INF] Retrieved groups from database and cached.
+2024-08-24 11:25:44.985 +01:00 [INF] Fetching all tasks.
+2024-08-24 11:25:45.094 +01:00 [INF] Retrieved tasks from database and cached.

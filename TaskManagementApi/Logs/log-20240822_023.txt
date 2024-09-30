@@ -1,0 +1,1 @@
+2024-08-22 23:55:32.780 +01:00 [WRN] The WebRootPath was not found: C:\Users\oluwatobilobao\source\repos\TaskManagementApi\TaskManagementApi\wwwroot. Static files may be unavailable.

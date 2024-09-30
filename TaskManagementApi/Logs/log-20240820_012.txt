@@ -1,0 +1,71 @@
+2024-08-20 22:29:33.909 +01:00 [INF] Creating a new list with name: Team Bonding
+2024-08-20 22:29:34.191 +01:00 [INF] List created successfully with ID: 66c50abdab502d4314238917
+2024-08-20 22:29:34.214 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-08-20 22:32:26.224 +01:00 [INF] Fetching all lists.
+2024-08-20 22:32:26.605 +01:00 [ERR] An error occurred while fetching all lists.
+System.FormatException: An error occurred while deserializing the Id property of class TaskManagementApi.Model.ListModel: Cannot deserialize a 'String' from BsonType 'Int32'.
+ ---> System.FormatException: Cannot deserialize a 'String' from BsonType 'Int32'.
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.DeserializeValue(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SealedClassSerializerBase`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize(IBsonSerializer serializer, BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeMemberValue(BsonDeserializationContext context, BsonMemberMap memberMap)
+   --- End of inner exception stack trace ---
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeMemberValue(BsonDeserializationContext context, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.Operations.CursorBatchDeserializationHelper.DeserializeBatch[TDocument](RawBsonArray batch, IBsonSerializer`1 documentSerializer, MessageEncoderSettings messageEncoderSettings)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateFirstCursorBatch(BsonDocument cursorDocument)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateCursor(IChannelSourceHandle channelSource, IChannelHandle channel, BsonDocument commandResult)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperationAsync[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperationAsync[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToListAsync[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at TaskManagementApi.Application.ListServices.GetAllListsAsync() in C:\Users\oluwatobilobao\source\repos\TaskManagementApi\TaskManagementApi\Application\ListServices.cs:line 75
+2024-08-20 22:32:26.866 +01:00 [ERR] An error occurred while fetching all lists.
+System.FormatException: An error occurred while deserializing the Id property of class TaskManagementApi.Model.ListModel: Cannot deserialize a 'String' from BsonType 'Int32'.
+ ---> System.FormatException: Cannot deserialize a 'String' from BsonType 'Int32'.
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.DeserializeValue(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SealedClassSerializerBase`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize(IBsonSerializer serializer, BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeMemberValue(BsonDeserializationContext context, BsonMemberMap memberMap)
+   --- End of inner exception stack trace ---
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeMemberValue(BsonDeserializationContext context, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.Operations.CursorBatchDeserializationHelper.DeserializeBatch[TDocument](RawBsonArray batch, IBsonSerializer`1 documentSerializer, MessageEncoderSettings messageEncoderSettings)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateFirstCursorBatch(BsonDocument cursorDocument)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateCursor(IChannelSourceHandle channelSource, IChannelHandle channel, BsonDocument commandResult)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperationAsync[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperationAsync[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToListAsync[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at TaskManagementApi.Application.ListServices.GetAllListsAsync() in C:\Users\oluwatobilobao\source\repos\TaskManagementApi\TaskManagementApi\Application\ListServices.cs:line 75
+   at TaskManagementApi.Controllers.ListController.GetAllListsAsync() in C:\Users\oluwatobilobao\source\repos\TaskManagementApi\TaskManagementApi\Controllers\ListController.cs:line 82
+2024-08-20 22:32:48.596 +01:00 [INF] Fetching list with ID: 66c50abdab502d4314238917

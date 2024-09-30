@@ -1,0 +1,62 @@
+2024-08-22 20:01:26.696 +01:00 [INF] Creating a new task with title: Songs with Jane
+2024-08-22 20:01:26.949 +01:00 [ERR] An error occurred while creating a task.
+System.ArgumentException: Boolean is not a valid representation for an Int32Serializer.
+   at MongoDB.Bson.Serialization.Serializers.Int32Serializer..ctor(BsonType representation, RepresentationConverter converter)
+   at MongoDB.Bson.Serialization.Serializers.Int32Serializer.WithRepresentation(BsonType representation)
+   at MongoDB.Bson.Serialization.Serializers.Int32Serializer.MongoDB.Bson.Serialization.IRepresentationConfigurable.WithRepresentation(BsonType representation)
+   at MongoDB.Bson.Serialization.Attributes.BsonRepresentationAttribute.Apply(IBsonSerializer serializer)
+   at MongoDB.Bson.Serialization.Attributes.BsonSerializationOptionsAttribute.Apply(IBsonSerializer serializer)
+   at MongoDB.Bson.Serialization.Attributes.BsonRepresentationAttribute.Apply(IBsonSerializer serializer)
+   at MongoDB.Bson.Serialization.Attributes.BsonSerializationOptionsAttribute.Apply(BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.Conventions.AttributeConventionPack.AttributeConvention.Apply(BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.Conventions.ConventionRunner.Apply(BsonClassMap classMap)
+   at MongoDB.Bson.Serialization.BsonClassMap.AutoMapClass()
+   at MongoDB.Bson.Serialization.BsonClassMap.AutoMap()
+   at MongoDB.Bson.Serialization.BsonClassMap.LookupClassMap(Type classType)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializationProvider.GetSerializer(Type type, IBsonSerializerRegistry serializerRegistry)
+   at MongoDB.Bson.Serialization.BsonSerializerRegistry.CreateSerializer(Type type)
+   at MongoDB.Bson.Serialization.BsonSerializerRegistry.GetSerializer(Type type)
+   at MongoDB.Bson.Serialization.BsonSerializerRegistry.GetSerializer[T]()
+   at MongoDB.Driver.MongoCollectionImpl`1..ctor(IMongoDatabase database, CollectionNamespace collectionNamespace, MongoCollectionSettings settings, ICluster cluster, IOperationExecutor operationExecutor)
+   at MongoDB.Driver.MongoDatabaseImpl.GetCollection[TDocument](String name, MongoCollectionSettings settings)
+   at TaskManagementApi.Context.MongoDbService.get_Tasks() in C:\Users\oluwatobilobao\source\repos\TaskManagementApi\TaskManagementApi\Context\MongoDbService.cs:line 31
+   at TaskManagementApi.Application.TaskServices.CreateTaskAsync(TaskModel task, String listId) in C:\Users\oluwatobilobao\source\repos\TaskManagementApi\TaskManagementApi\Application\TaskServices.cs:line 46
+2024-08-22 20:04:02.025 +01:00 [INF] Creating a new task with title: Songs with Jane
+2024-08-22 20:04:02.622 +01:00 [ERR] An error occurred while creating a task.
+MongoDB.Driver.Linq.ExpressionNotSupportedException: Expression not supported: l.Id.ToString().
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToFilterTranslators.ToFilterFieldTranslators.MethodCallExpressionToFilterFieldTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToFilterTranslators.ToFilterFieldTranslators.ExpressionToFilterFieldTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.LinqProviderAdapterV3.TranslateExpressionToField[TDocument,TField](Expression`1 expression, IBsonSerializer`1 documentSerializer, IBsonSerializerRegistry serializerRegistry, Boolean allowScalarValueForArrayField)
+   at MongoDB.Driver.ExpressionFieldDefinition`2.Render(IBsonSerializer`1 documentSerializer, IBsonSerializerRegistry serializerRegistry, LinqProvider linqProvider, Boolean allowScalarValueForArrayField)
+   at MongoDB.Driver.SimpleFilterDefinition`2.Render(IBsonSerializer`1 documentSerializer, IBsonSerializerRegistry serializerRegistry, LinqProvider linqProvider)
+   at MongoDB.Driver.MongoCollectionImpl`1.ConvertWriteModelToWriteRequest(WriteModel`1 model, Int32 index)
+   at System.Linq.Enumerable.SelectIterator[TSource,TResult](IEnumerable`1 source, Func`3 selector)+MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at MongoDB.Driver.Core.Operations.BulkMixedWriteOperation..ctor(CollectionNamespace collectionNamespace, IEnumerable`1 requests, MessageEncoderSettings messageEncoderSettings)
+   at MongoDB.Driver.MongoCollectionImpl`1.CreateBulkWriteOperation(IClientSessionHandle session, IEnumerable`1 requests, BulkWriteOptions options)
+   at MongoDB.Driver.MongoCollectionImpl`1.BulkWriteAsync(IClientSessionHandle session, IEnumerable`1 requests, BulkWriteOptions options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionBase`1.UpdateOneAsync(FilterDefinition`1 filter, UpdateDefinition`1 update, UpdateOptions options, Func`3 bulkWriteAsync)
+   at TaskManagementApi.Application.TaskServices.CreateTaskAsync(TaskModel task, String listId) in C:\Users\oluwatobilobao\source\repos\TaskManagementApi\TaskManagementApi\Application\TaskServices.cs:line 51
+2024-08-22 20:04:28.605 +01:00 [INF] Creating a new task with title: Songs with Jane
+2024-08-22 20:04:28.691 +01:00 [ERR] An error occurred while creating a task.
+MongoDB.Driver.MongoWriteException: A write operation resulted in an error. WriteError: { Category : "DuplicateKey", Code : 11000, Message : "E11000 duplicate key error collection: TaskManagementDb.Tasks index: _id_ dup key: { _id: "" }" }.
+ ---> MongoDB.Driver.MongoBulkWriteException`1[TaskManagementApi.Model.TaskModel]: A bulk write operation resulted in one or more errors. WriteErrors: [ { Category : "DuplicateKey", Code : 11000, Message : "E11000 duplicate key error collection: TaskManagementDb.Tasks index: _id_ dup key: { _id: "" }" } ].
+   at MongoDB.Driver.MongoCollectionImpl`1.BulkWriteAsync(IClientSessionHandle session, IEnumerable`1 requests, BulkWriteOptions options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionBase`1.InsertOneAsync(TDocument document, InsertOneOptions options, Func`3 bulkWriteAsync)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.MongoCollectionBase`1.InsertOneAsync(TDocument document, InsertOneOptions options, Func`3 bulkWriteAsync)
+   at TaskManagementApi.Application.TaskServices.CreateTaskAsync(TaskModel task, String listId) in C:\Users\oluwatobilobao\source\repos\TaskManagementApi\TaskManagementApi\Application\TaskServices.cs:line 46
+2024-08-22 20:04:33.616 +01:00 [INF] Creating a new task with title: Songs with Jane
+2024-08-22 20:04:33.702 +01:00 [ERR] An error occurred while creating a task.
+MongoDB.Driver.MongoWriteException: A write operation resulted in an error. WriteError: { Category : "DuplicateKey", Code : 11000, Message : "E11000 duplicate key error collection: TaskManagementDb.Tasks index: _id_ dup key: { _id: "" }" }.
+ ---> MongoDB.Driver.MongoBulkWriteException`1[TaskManagementApi.Model.TaskModel]: A bulk write operation resulted in one or more errors. WriteErrors: [ { Category : "DuplicateKey", Code : 11000, Message : "E11000 duplicate key error collection: TaskManagementDb.Tasks index: _id_ dup key: { _id: "" }" } ].
+   at MongoDB.Driver.MongoCollectionImpl`1.BulkWriteAsync(IClientSessionHandle session, IEnumerable`1 requests, BulkWriteOptions options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionBase`1.InsertOneAsync(TDocument document, InsertOneOptions options, Func`3 bulkWriteAsync)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.MongoCollectionBase`1.InsertOneAsync(TDocument document, InsertOneOptions options, Func`3 bulkWriteAsync)
+   at TaskManagementApi.Application.TaskServices.CreateTaskAsync(TaskModel task, String listId) in C:\Users\oluwatobilobao\source\repos\TaskManagementApi\TaskManagementApi\Application\TaskServices.cs:line 46
+2024-08-22 20:05:00.356 +01:00 [INF] Creating a new task with title: Songs with Jane
